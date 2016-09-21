@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+
+    <!-- (5) add the JavaScript file  and angularJS file-->
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+
+  </head>
+
+    <body ng-app="LunchCheck"> <!-- (6) declare the ng-app on body tag -->
+
+       <div class="container" ngController="LunchCheckController"> <!-- (8) declare a controller -->
+         <h1>Lunch Checker</h1>
+
+             <!-- (9) Annotate the textbox, the button, and the placeholder such that you can hook in behavior to those elements from your controller. -->
+             <div class="form-group" ng-controller="LunchCheckController">
+                 <div>
+                     <input id="lunch-menu" type="text"
+                     ng-model="lunchDishes"
+                     placeholder="list comma separated dishes you usually have for lunch"
+                     class="form-control">
+                 </div>
+                 </br>
+                 <div class="form-group">
+                     <button class="btn btn-default" ng-click="displayMessage();">Check If Too Much</button>
+                 </div>
+                 <div class="form-group message">
+                   <!-- Your message can go here. -->
+                   {{lunchMessage}}
+                 </div>
+
+             </div>
+
+       </div>
+
+    </body>
+</html>
